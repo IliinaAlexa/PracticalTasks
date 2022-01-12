@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3DCoordinates", "3DCoordinates.csproj", "{60FA59FD-E65F-4565-A2CE-9F2CB4636CB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60FA59FD-E65F-4565-A2CE-9F2CB4636CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60FA59FD-E65F-4565-A2CE-9F2CB4636CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60FA59FD-E65F-4565-A2CE-9F2CB4636CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60FA59FD-E65F-4565-A2CE-9F2CB4636CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D77F655-CC91-4AE5-A0C0-04145D971A49}
+	EndGlobalSection
+EndGlobal
