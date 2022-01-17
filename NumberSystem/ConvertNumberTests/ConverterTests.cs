@@ -5,26 +5,26 @@ using System;
 namespace ConvertNumberTests
 {
     [TestClass]
-    public class ConvertNumberTests
+    public class ConverterTests
     {
         [TestMethod]
         public void BinarySystemConvertTest()
         {
-            ConvertToNewNumberSystem convertor = new ConvertToNewNumberSystem();
+            DecimalToOtherBaseConverter convertor = new DecimalToOtherBaseConverter();
             string result = convertor.Convert(4, 2);
             Assert.AreEqual("100", result);
         }
         [TestMethod]
         public void ElevenSystemConvertTest()
         {
-            ConvertToNewNumberSystem convertor = new ConvertToNewNumberSystem();
+            DecimalToOtherBaseConverter convertor = new DecimalToOtherBaseConverter();
             string result = convertor.Convert(500, 11);
             Assert.AreEqual("415", result);
         }
         [TestMethod]
         public void DecimalSystemConvertTest()
         {
-            ConvertToNewNumberSystem convertor = new ConvertToNewNumberSystem();
+            DecimalToOtherBaseConverter convertor = new DecimalToOtherBaseConverter();
             string result = convertor.Convert(17, 20);
             Assert.AreEqual("H", result);
         }
@@ -33,15 +33,14 @@ namespace ConvertNumberTests
 
         public void ArgumentOutOfRangeExceptionLargerValueConvertTest()
         {
-            ConvertToNewNumberSystem convertor = new ConvertToNewNumberSystem();
-            string result = convertor.Convert(42, 25);
-            
+            DecimalToOtherBaseConverter convertor = new DecimalToOtherBaseConverter();
+            string result = convertor.Convert(42, 25);    
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void ArgumentOutOfRangeExceptionLowerValueConvertTest()
         {
-            ConvertToNewNumberSystem convertor = new ConvertToNewNumberSystem();
+            DecimalToOtherBaseConverter convertor = new DecimalToOtherBaseConverter();
             string result = convertor.Convert(42, 1);
         }
   

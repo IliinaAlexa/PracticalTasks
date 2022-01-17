@@ -10,7 +10,7 @@ namespace NumberSystem
             {
                 if (args.Length == 2)
                 {
-                    ConvertToNewNumberSystem convertor = new ConvertToNewNumberSystem();
+                    DecimalToOtherBaseConverter convertor = new DecimalToOtherBaseConverter();
                     int number, system;
                     number = Convert.ToInt32(args[0]);
                     system = Convert.ToInt32(args[1]);

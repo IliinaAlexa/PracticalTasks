@@ -2,8 +2,8 @@
 
 namespace NumberSystem
 {
-   public class ConvertToNewNumberSystem
-    {
+   public class DecimalToOtherBaseConverter
+   {
         /// <summary>
         /// The method converts a decimal number to a base number. 
         /// </summary>
@@ -39,5 +39,5 @@ namespace NumberSystem
             return new string(stringToReverse);
         }
    
-    }
+   }
 }
