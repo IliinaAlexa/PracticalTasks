@@ -13,10 +13,8 @@ namespace SymbolsCounter
             }
             else
             {
-                Console.WriteLine("Error");
+                Console.WriteLine("Invalid argument value!");
             }
-           
-            
         }
     }
 }
