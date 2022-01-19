@@ -43,8 +43,8 @@ namespace _3DCoordinates
             {
                 throw new Exception("Drone cannot to fly at a distance of more than 1000 km");
             }
-            var helpTime = CurrentPosition.GetDistance(coordinate)/Speed;
-            var freezeTime = (((int)helpTime / 10) - 1)*FREEZETIME;
+            var helpTime = CurrentPosition.GetDistance(coordinate) / Speed;
+            var freezeTime = (((int)helpTime / 10) - 1) * FREEZETIME;
             if (freezeTime > 0)
             {
                 helpTime += freezeTime;

@@ -10,7 +10,6 @@ namespace _3DCoordinates
             try
             {
                 Point currentPosition = new Point(1, 1, 1);
-
                 Plane plane = new Plane();
                 plane.CurrentPosition = currentPosition;
                 Drone drone = new Drone(70);
