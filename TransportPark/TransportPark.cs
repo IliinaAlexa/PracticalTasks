@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Xml.Serialization;
 
 namespace TransportPark
@@ -30,19 +31,20 @@ namespace TransportPark
         }
 
         /// <summary>
-        /// Override method ToString().
+        /// Method GetInfo()
         /// </summary>
         /// <returns>
         /// Returns transports list.
         /// </returns>
-        public override string ToString()
+        public string GetInfo()
         {
-            string resultTransport = string.Empty;
+            StringBuilder resultTransportStringBuilder = new StringBuilder();
             foreach (Vehicle transport in Transports)
             {
-                resultTransport += transport.ToString();
+                resultTransportStringBuilder.Append(transport.GetInfo());
+                resultTransportStringBuilder.Append("\n");
             }
-            return "Transport list is " + resultTransport;
+            return "Transport list is " + resultTransportStringBuilder.ToString();
         }
     }
 }

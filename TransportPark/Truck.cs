@@ -23,17 +23,21 @@ namespace TransportPark
         public Truck(string name , int weight, Chassis chassis, Transmission transmission, Engine engine): base(name, chassis, transmission, engine)
         {
             this.weight = weight;
+            if (weight < 1000)
+            {
+                throw new Exception("Truck weight more than 1000 kg");
+            }
         }
 
         /// <summary>
-        /// Override method ToString().
+        /// Override method GetInfo().
         /// </summary>
         /// <returns>
         /// Returns a string of field values for the truck.
         /// </returns>
-        public override string ToString()
+        public override string GetInfo()
         {
-            return String.Format("Weight is {0}", weight) + base.ToString();
+            return String.Format("Weight is {0}", weight) + base.GetInfo();
         }
     }
 }

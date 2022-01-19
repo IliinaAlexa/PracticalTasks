@@ -10,8 +10,9 @@ namespace TransportPark
         public int numberOfWheels; // number of wheels for chassis
         public int permissibleLoad; // permissible load for chassis
         public int chassisNumber; // chassis serial number
-
+        
         public Chassis() { }
+
         /// <summary>
         /// The class constructor.
         /// </summary>
@@ -23,16 +24,26 @@ namespace TransportPark
             this.numberOfWheels = numberOfWheels;
             this.permissibleLoad = permissibleLoad;
             this.chassisNumber = chassisNumber;
+            if (numberOfWheels < 0 || permissibleLoad < 0)
+            {
+                throw new ArgumentOutOfRangeException("Only positive values are allowed");
+            }
+            int lengthChassisNumber = chassisNumber.ToString().Length;
+            if (lengthChassisNumber < 5 || lengthChassisNumber > 5)
+            {
+                throw new Exception("Chassis number length consists of 5 symbols"); 
+            }
         }
+
         /// <summary>
-        /// Override method ToString().
+        /// Method GetInfo().
         /// </summary>
         /// <returns>
         /// Returns a string of field values for the chassis.
         /// </returns>
-        public override string ToString()
+        public string GetInfo()
         {
-            return String.Format("Number of wheels is {0}, Permissible load is {1}, Chassis number is {2}",
+            return String.Format("Number of wheels is {0}, Permissible load is {1}, Chassis number is {2}; ",
                                   numberOfWheels, permissibleLoad, chassisNumber);
         }
     }

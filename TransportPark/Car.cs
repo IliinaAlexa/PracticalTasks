@@ -5,11 +5,11 @@ namespace TransportPark
 {
     [Serializable]
     
-
     public class Car : Vehicle
     {
         private string color; // car color
         public Car() { }
+
        /// <summary>
        /// The class constructor.
        /// </summary>
@@ -23,16 +23,16 @@ namespace TransportPark
             this.color = color;
 
         }
+
         /// <summary>
-        /// Override method ToString().
+        /// Override method GetInfo().
         /// </summary>
         /// <returns>
         /// Returns a string of field values for the car.
         /// </returns>
-        public override string ToString()
+        public override string GetInfo()
         {
-            return String.Format("Color is {0}", color + " ") + base.ToString();
-
+            return String.Format("Color is {0}", color + " ") + base.GetInfo();
         }
     }
 }

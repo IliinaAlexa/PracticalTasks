@@ -15,27 +15,27 @@ namespace TransportPark
 
     public abstract class Vehicle // base class
     {
-    /// <summary>
-    /// The name property.
-    /// </summary>
-    public string Name {get; set; }
+        /// <summary>
+        /// The name property.
+        /// </summary>
+        public string Name { get; set; }
 
-    /// <summary>
-    /// The engine property.
-    /// </summary>
-    public Engine Engine { get; set; }
+        /// <summary>
+        /// The engine property.
+        /// </summary>
+        public Engine Engine { get; set; }
 
-    /// <summary>
-    /// The transmission property.
-    /// </summary>
-    public Transmission Transmission { get; set; }
+        /// <summary>
+        /// The transmission property.
+        /// </summary>
+        public Transmission Transmission { get; set; }
 
-    /// <summary>
-    /// The chassis property.
-    /// </summary>
-    public Chassis Chassis { get; set; }
+        /// <summary>
+        /// The chassis property.
+        /// </summary>
+        public Chassis Chassis { get; set; }
 
-        public Vehicle(){}
+        public Vehicle() { }
 
         /// <summary>
         /// The base class constructor.
@@ -46,27 +46,25 @@ namespace TransportPark
         /// <param name="engine"></param>
         public Vehicle(string name, Chassis chassis, Transmission transmission, Engine engine)
         {
-            this.Name = name;
+            Name = name;
             Engine = engine;
             Transmission = transmission;
             Chassis = chassis;
-
         }
 
         /// <summary>
-        /// Override method ToString()
+        /// Virtual method GetInfo()
         /// </summary>
         /// <returns>
         /// Returns a string of field values for the vehicle.
-        /// </returns>
-        public override string ToString()
-        {
-            return  String.Format("Name is {0}", Name) +
-                    String.Format("Chassis is {0}", Chassis) +
-                    String.Format("Transmission is {0}", Transmission) +
-                    String.Format("Engine is {0}", Engine);
-
-        }
-
+        /// </returns>      
+            public virtual string GetInfo()
+            {
+            return (String.Format("Name is {0}", Name) +
+                String.Format("Chassis: {0}", Chassis.GetInfo()) +
+                String.Format("Transmission: {0}", Transmission.GetInfo()) +
+                String.Format("Engine: {0}", Engine.GetInfo()));
+            }
+        
     }
 }

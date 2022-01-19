@@ -10,6 +10,7 @@ namespace TransportPark
         private int placeNumber; // number of place in bus
 
         public Bus() { }
+
         /// <summary>
         /// The class constructor.
         /// </summary>
@@ -21,16 +22,20 @@ namespace TransportPark
         public Bus(string name, int placeNumber, Chassis chassis, Transmission transmission, Engine engine) : base(name, chassis, transmission, engine)
         {
             this.placeNumber = placeNumber;
+            if (placeNumber < 0)
+            {
+                throw new ArgumentOutOfRangeException("Only positive values are allowed");
+            }
         }
         /// <summary>
-        /// Override method ToString().
+        /// Override method GetInfo().
         /// </summary>
         /// <returns>
         /// Returns a string of field values for the bus.
         /// </returns>
-        public override string ToString()
+        public override string GetInfo()
         {
-            return String.Format("Place number is {0}", placeNumber) + base.ToString();
+            return String.Format("Place number is {0}", placeNumber) + base.GetInfo();
         }
     }
 }

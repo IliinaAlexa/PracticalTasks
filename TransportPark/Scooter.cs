@@ -9,6 +9,7 @@ namespace TransportPark
     {
         private int maxSpeed; // max scooter speed
         public Scooter() { }
+
         /// <summary>
         /// The class constructor.
         /// </summary>
@@ -19,17 +20,25 @@ namespace TransportPark
         /// <param name="engine"></param>
         public Scooter(string name, int maxSpeed, Chassis chassis, Transmission transmission, Engine engine) : base(name, chassis, transmission, engine)
         {
-            this.maxSpeed = maxSpeed;
+            if (maxSpeed < 100 || maxSpeed > 0)
+            {
+                this.maxSpeed = maxSpeed;
+            }
+            else
+            {
+                throw new Exception("Scooter speed must less than 100 and more than 0");
+            }
         }
+
         /// <summary>
-        /// Override method ToString().
+        /// Override method GetInfo().
         /// </summary>
         /// <returns>
         /// Returns a string of field values for the scooter.
         /// </returns>
-        public override string ToString()
+        public override string GetInfo()
         {
-            return String.Format("Max speed is {0}", maxSpeed) + base.ToString();
+            return String.Format("Max speed is {0}", maxSpeed) + base.GetInfo();
         }
     }
 }
