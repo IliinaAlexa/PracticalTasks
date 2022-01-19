@@ -30,11 +30,6 @@ namespace _3DCoordinates
             }
            
         }
-        /*  public static double GetDistance(Point A, Point B)
-          {
-              return Math.Sqrt(((B.X - A.X) * (B.X - A.X)) + ((B.Y - A.Y) * (B.Y - A.Y)) + ((B.Z - A.Z) * (B.Z - A.Z)));
-          }*/
-
 
         /// <summary>
         /// To calculate the distance between two points.
@@ -43,7 +38,6 @@ namespace _3DCoordinates
         /// <returns>
         /// Returns Point3D.
         /// </returns>
-
         public double GetDistance(Point position) 
         {
             return Math.Sqrt(((this.X - position.X) * (this.X - position.X)) + 

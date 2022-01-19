@@ -33,8 +33,6 @@ namespace _3DCoordinates
             CurrentPosition = coordinate;
         }
 
-        //   public double GetFlyTime(Point coordinate) => Point.GetDistance(CurrentPosition, coordinate) / speed;// time min;
-
         /// <summary>
         /// To calculate the flight time
         /// </summary>

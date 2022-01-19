@@ -1,17 +1,17 @@
 ﻿using System;
 
-
 namespace _3DCoordinates
 {
     class Drone : IFlyable
     {
-        const double MAXDISTANCE = 100; //100 km
-        double speed;
+        const int FREEZETIME = 1;
+        const double MAXDISTANCE = 1000; //1000 km
+        public double Speed;
         public Point CurrentPosition { get; set; }
-       
-        public Drone()
+
+        public Drone(double speed)
         {       
-            speed = 70; 
+            Speed = speed; 
         }
 
         /// <summary>
@@ -36,20 +36,23 @@ namespace _3DCoordinates
         /// <returns>
         /// The duration of the flight.
         /// </returns>
-
         public double GetFlyTime(Point coordinate)
         {
+
             if (CurrentPosition.GetDistance(coordinate) > MAXDISTANCE)
             {
                 throw new Exception("Drone cannot to fly at a distance of more than 1000 km");
             }
-            return CurrentPosition.GetDistance(coordinate) / speed;
+            var helpTime = CurrentPosition.GetDistance(coordinate)/Speed;
+            var freezeTime = (((int)helpTime / 10) - 1)*FREEZETIME;
+            if (freezeTime > 0)
+            {
+                helpTime += freezeTime;
+            }
+            return helpTime;
         }
-            
-    
-            
-             
-     }
+
+    }
 }
 
 

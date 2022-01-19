@@ -13,17 +13,14 @@ namespace _3DCoordinates
 
                 Plane plane = new Plane();
                 plane.CurrentPosition = currentPosition;
-                Drone drone = new Drone();
+                Drone drone = new Drone(70);
                 drone.CurrentPosition = currentPosition;
                 Bird bird = new Bird();
                 bird.CurrentPosition = currentPosition;
-
                 flyingObjects.Flyables.Add(new Bird()); // current position
-                flyingObjects.Flyables.Add(new Drone());
+                flyingObjects.Flyables.Add(new Drone(50));
                 flyingObjects.Flyables.Add(new Plane());
-
-                var timeResults = flyingObjects.GetFlyTimes(new Point(20, 50, 10));
-
+                var timeResults = flyingObjects.GetFlyTimes(new Point(20, 500, 100));
                 foreach (var time in timeResults)
                 {
                     Console.WriteLine(time);
@@ -37,17 +34,14 @@ namespace _3DCoordinates
                     }
                     catch (Exception ex)
                     {
-                        
                         Console.WriteLine(ex.Message);
                     }
                 }
-
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-        }
-        
+        }     
     }
 }
